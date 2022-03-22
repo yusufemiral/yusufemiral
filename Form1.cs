@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Basit_veri_bağlama_uygulaması_2
+namespace Giriş_maskeleme_uygulaması
 {
     public partial class Form1 : Form
     {
@@ -16,15 +16,17 @@ namespace Basit_veri_bağlama_uygulaması_2
             InitializeComponent();
         }
 
-        private void btnBagla_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-             Ogrenciler ogrenci = new Ogrenciler();
-             ogrenci.Numara = 1111;
-             ogrenci.AdSoyad = "Mehmet";
-             ogrenci.Alan = "Bilişim Teknolojileri";
-             txtNumara.DataBindings.Add("Text", ogrenci, "Numara");
-             txtAdSoyad.DataBindings.Add("Text", ogrenci, "AdSoyad");
-             txtAlan.DataBindings.Add("Text", ogrenci, "Alan");
+                    }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            maskTc.Mask = "00000000000";
+            maskTelefon.Mask = "(999) 000 00 00";
+            maskDTarihi.Mask = "00/00/0000";
+            maskKart.Mask = "0000000000000000";
+            maskIp.Mask = "###.###.###.###";
         }
     }
 }
